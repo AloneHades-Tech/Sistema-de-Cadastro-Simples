@@ -1,58 +1,22 @@
--- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
---
--- Host: localhost    Database: formulario_teste
--- ------------------------------------------------------
--- Server version	8.0.44
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `usuarios`
---
+-- ESTRUTURA DA TABELA 'usuarios'
+-- Finalidade: Armazenar os perfis de clientes e operadores do sistema da barbearia.
 
 DROP TABLE IF EXISTS `usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `usuarios` (
-  `idusuarioscol` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `email` varchar(110) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `telefone` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `genero` varchar(15) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `data_nasc` date NOT NULL,
-  `cidade` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `estado` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `endereco` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `idusuarioscol` int NOT NULL AUTO_INCREMENT COMMENT 'Chave primária: Identificador único do registro.',
+  `nome` varchar(45) NOT NULL COMMENT 'Nome completo do cliente ou usuário.',
+  `email` varchar(110) NOT NULL COMMENT 'E-mail para login e contato (único para autenticação).',
+  `telefone` varchar(15) NOT NULL COMMENT 'Telefone de contato com DDD.',
+  `genero` varchar(15) NOT NULL COMMENT 'Identificação de gênero para perfil demográfico.',
+  `data_nasc` date NOT NULL COMMENT 'Data de nascimento (formato YYYY-MM-DD).',
+  `cidade` varchar(100) NOT NULL COMMENT 'Cidade de residência do cliente.',
+  `estado` varchar(100) NOT NULL COMMENT 'Estado (UF) de residência.',
+  `endereco` varchar(100) NOT NULL COMMENT 'Endereço completo (Rua, Número, Bairro).',
   PRIMARY KEY (`idusuarioscol`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuarios`
---
-
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (3,'Ismael','Ismael@gmail.com','123456','masculino','2002-01-30','Tangamandapio','Botucatu','Rua dos Barbeiros, N 24, Bairro: Barbeirópolis');
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2026-01-18 18:40:57
+) 
+ENGINE=InnoDB 
+AUTO_INCREMENT=4 
+DEFAULT CHARSET=utf8mb4 
+COLLATE=utf8mb4_unicode_520_ci 
+COMMENT='Tabela central de usuários: Base para o CRUD de gestão da barbearia.';
