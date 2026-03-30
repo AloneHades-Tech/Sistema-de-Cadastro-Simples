@@ -1,1 +1,12 @@
+# Configurações de Banco de Dados (Arquivos com senhas)
+core/config.php
 config.php
+
+# Pastas de IDE e Sistema
+.vscode/
+Thumbs.db
+.DS_Store
+
+# Logs e arquivos temporários
+*.log
+tmp/

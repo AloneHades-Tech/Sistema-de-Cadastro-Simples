@@ -43,7 +43,7 @@
 <div>
 <body>
     <h1>Login</h1>
-    <form action="TesteLogin.php" method="POST">
+    <form action="core/validacao_login.php" method="POST">
     <input type = "text" name = "email" placeholder ="Email">
     <br><br>
     <input type = "password" name = "senha" placeholder ="Senha">

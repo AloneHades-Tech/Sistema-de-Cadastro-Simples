@@ -1,5 +1,5 @@
 <?php
-include_once('config.php');
+include_once('../core/config.php'); 
 
 // FASE 1: BUSCAR DADOS (GET)
 if(!empty($_GET['id'])) {
